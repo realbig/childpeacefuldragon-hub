@@ -57,6 +57,10 @@ Template:       hub
     }
 }
 
+#navigation {
+    width: 100% !important;
+}
+
 #navigation .nav.cart {
     margin-bottom: 20px;
 }
