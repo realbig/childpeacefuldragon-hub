@@ -303,3 +303,12 @@ ul.products li.product .product-inner.animated.fadeOut, ul.products li.product .
     padding: 0;
     border: none;
 }
+
+/**
+ * WooCommerce 3.0.x Fix
+ * 
+ * Yep, that's all
+ */
+ul.products li.product h2 {
+	color: #fff;
+}
