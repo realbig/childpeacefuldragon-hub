@@ -319,4 +319,10 @@ ul.products li.product h2 {
 		clear: none !important;
 	}
 	
+	ul.products li.product:nth-child(3n) {
+		
+		border-right-width: .09em !important;
+		
+	}
+	
 }
