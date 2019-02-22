@@ -312,3 +312,20 @@ ul.products li.product .product-inner.animated.fadeOut, ul.products li.product .
 ul.products li.product h2 {
 	color: #fff;
 }
+
+/* The Parent Theme does not support WooCommerce CSS, so we have to do this manually */
+@media only screen and (min-width: 768px) {
+	
+	ul.products li.product {
+		margin-right: 0;
+		margin-bottom: 0;
+		clear: none;
+		width: 25%;
+		padding-top: 25%;
+	}
+	
+	ul.products li.product.first {
+		clear: none;
+	}
+	
+}
