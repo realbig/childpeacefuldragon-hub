@@ -326,3 +326,9 @@ ul.products li.product h2 {
 	}
 	
 }
+
+ul.products li.product .product-inner {
+		
+	width: 80% !important;
+
+}
