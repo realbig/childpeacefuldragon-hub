@@ -1,0 +1,322 @@
+@import url("../hub/style.css");
+
+#home-slider .wrapper {
+    overflow: hidden;
+}
+
+/* Header contact */
+.header-contact {
+    float: right;
+    text-align: right;
+    margin: 0 0 2em 0;
+    padding: 0 15px 0 0;
+}
+
+.header-contact address {
+    margin: 0;
+}
+
+.header-contact h4 {
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+/* End header contact */
+
+/* ===============================================*/
+
+/* Header stuff */
+#header-wrapper {
+    padding: 1em 0;
+}
+
+#intro-message {
+    padding: 2em 0 6.854em;
+}
+
+#intro-message h2 {
+    font-size: 7em;
+    font-family: "P22DaVinciForward";
+    margin: 0;
+    line-height: 1.1em;
+}
+
+#header {
+    min-height: 230px;
+}
+
+@media only screen and (max-width: 400px) {
+    #intro-message h2 {
+        font-size: 4em;
+    }
+}
+
+#navigation {
+    width: 100% !important;
+}
+
+#navigation .nav.cart {
+    margin-bottom: 20px;
+}
+
+#navigation ul.nav > li {
+    margin-bottom: 20px !important;
+}
+
+/* End header stuff */
+
+/* ===============================================*/
+
+/* Testimonials (home page) stuff */
+#testimonials .avatar-link {
+    width: 150px;
+    height: auto;
+}
+
+#testimonials .avatar-link.active:after {
+    left: 50% !important;
+    margin-left: -20px;
+}
+
+#testimonials .avatar-link img {
+    width: 100%;
+    height: auto;
+}
+
+/* End testimonials (home page) stuff */
+
+/* ===============================================*/
+
+/* Store edits */
+ul.products li.product:before {
+    opacity: 0.8 !important;
+    filter: alpha(opacity=@opacity *100) !important;
+}
+
+/* End store edits */
+
+/* ===============================================*/
+
+/* Product list stuff */
+ul.products li.product .product-inner.animated.fadeOut, ul.products li.product .product-inner.animated.fadeIn, #main ul.products li.product .product-inner {
+    -webkit-animation-name: none;
+    -moz-animation-name: none;
+    -o-animation-name: none;
+    animation-name: none;
+    opacity: 1;
+}
+
+/* End product list stuff */
+
+/* ===============================================*/
+
+/* Footer widgets */
+#footer-widgets .static .dcsmt, #footer-widgets .dc-social.static ul.social-tabs li.active {
+    background: #f5f5f4;
+}
+
+/* End Footer Widgets */
+
+/* ===============================================*/
+
+/* Home Event Categories */
+#home-event-cats {
+    text-align: center;
+}
+
+.cats {
+    display: inline-table;
+    width: 22%;
+    padding: 2em;
+    text-align: center;
+}
+
+.cats:hover {
+    outline: 2px solid #F0F0F0;
+}
+
+.cats h3 a:before {
+    display: block;
+}
+
+.cats.ongoing-classes h3 a:before {
+    content: "强";
+}
+
+.cats.certifications h3 a:before {
+    content: "灵";
+}
+
+.cats.private-sessions h3 a:before {
+    content: "嘏";
+}
+
+.cats.workshops h3 a:before {
+    content: "健";
+}
+
+.cats.webinars h3 a:before {
+    content: "禧";
+}
+
+.cats.gallery h3 a:before {
+    content: "宁";
+}
+
+.read-more {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cats {
+        width: 18%;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .cats {
+        width: 36%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .cats {
+        width: 80%;
+    }
+}
+
+/* End home event categories */
+
+/* ===============================================*/
+
+/* Calendar Adjustments, added by Rogan from Kyle's code */
+#em-wrapper table.fullcalendar td {
+    width: auto;
+    height: auto;
+}
+
+#em-wrapper table.fullcalendar thead td, #em-wrapper .days-names td {
+    text-align: center;
+}
+
+/* End Calendar Edits */
+
+/* ===============================================*/
+
+/* Web Members Area */
+/* Box sizing to get even 1/3 width */
+.shortcode-tabs ul.tab_titles * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Auto generated br's messing up tabs */
+.shortcode-tabs > br {
+    display: none;
+}
+
+/* Adjust the size and format of tabs */
+.shortcode-tabs ul.tab_titles li.nav-tab {
+    width: 33.3333%;
+    padding: 0 10px;
+    text-align: center;
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+/* Some more tab formatting */
+.shortcode-tabs ul.tab_titles li.nav-tab a {
+    font-size: 14px !important;
+    width: 100%;
+    white-space: normal;
+    outline: none !important;
+}
+
+/* Make the active tab's background-color match the content's background-color */
+.shortcode-tabs ul.tab_titles li.nav-tab.ui-state-active {
+    background-color: #fff !important;
+}
+
+/* Change up the border colors for the tabs */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border-color: #c7c7c7;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border-color: #E4AAA4;
+}
+
+/* End Web Members Area */
+
+/* ===============================================*/
+
+/* Content Classes */
+#main .message {
+    background-color: #FFA1A1;
+    color: #fff;
+    padding: 5px;
+}
+
+/* End Content Classes */
+
+/* ===============================================*/
+
+/* Widgets */
+#connect .social {
+    display: inline-block;
+}
+
+/* End Widgets */
+
+/* ===============================================*/
+
+/* Home */
+.home-section header.section-title {
+    float: none;
+}
+
+/* End Home */
+
+/* ===============================================*/
+
+/* Slider */
+.soliloquy-container {
+    overflow: hidden;
+}
+
+/* ===============================================*/
+
+/* Locations */
+.single-location #wrapper #post-details {
+    display: none;
+}
+
+#setupform p.submit {
+    display: block;
+    padding: 0;
+    border: none;
+}
+
+/**
+ * WooCommerce 3.0.x Fix
+ * 
+ * Yep, that's all
+ */
+ul.products li.product h2 {
+	color: #fff;
+}
+
+/* The Parent Theme does not support WooCommerce CSS, so we have to do this manually */
+@media only screen and (min-width: 768px) {
+	
+	ul.products li.product {
+		width: 25% !important;
+		padding-top: 25% !important;
+	}
+	
+	ul.products li.product.first {
+		clear: none !important;
+	}
+	
+}

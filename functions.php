@@ -1,5 +1,32 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+// Make sure PHP version is correct
+if ( ! version_compare( PHP_VERSION, '5.3.0', '>=' ) ) {
+	wp_die( __( 'ERROR in Theme 2017 theme: PHP version 5.3 or greater is required.' ) );
+}
+
+// Make sure no theme constants are already defined (realistically, there should be no conflicts)
+if ( defined( 'THEME_VER' ) ||
+	defined( 'THEME_URL' ) ||
+	defined( 'THEME_DIR' ) ||
+	defined( 'THEME_FILE' ) ||
+	isset( $theme_fonts ) ) {
+	wp_die( __( 'ERROR in Theme 2017 theme: There is a conflicting constant. Please either find the conflict or rename the constant.', 'Constant or Global already in use Error' ) );
+}
+
+/**
+ * Define Constants based on our Stylesheet Header. Update things only once!
+ */
+$theme_header = wp_get_theme();
+
+define( 'THEME_VER', $theme_header->get( 'Version' ) );
+define( 'THEME_NAME', $theme_header->get( 'Name' ) );
+define( 'THEME_URL', get_stylesheet_directory_uri() );
+define( 'THEME_DIR', get_stylesheet_directory() );
+
 // Activation email edits
 
 add_filter('wp_mail_from', function() {
@@ -72,13 +99,6 @@ function change_ongoing_classes_link($link){
 }
 add_filter('home_box_ongoing_classes_link', 'change_ongoing_classes_link');
 
-// Include files
-function pd_include_files(){
-  if (get_post_type() == 'event')
-    wp_enqueue_script('child', get_stylesheet_directory_uri().'/js/child.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'pd_include_files');
-
 add_action( 'gettext', '_pd_registration_title_text' );
 function _pd_registration_title_text( $text ) {
 
@@ -133,3 +153,76 @@ function _pd_testimonial_featured_image_labels( $labels ) {
     return $labels;
     
 }
+
+/**
+ * Register theme files.
+ *
+ * @since 1.0.0
+ */
+add_action( 'init', function () {
+
+	global $theme_fonts;
+
+	// Theme styles
+	wp_register_style(
+		'pds-theme',
+		THEME_URL . '/app.css',
+		null,
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VER
+	);
+
+	// Theme script
+	wp_register_script(
+		'pds-theme',
+		THEME_URL . '/js/child.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VER,
+		true
+	);
+	
+	wp_localize_script(
+		'pds-theme',
+		'pdsTheme',
+		apply_filters( 'pds_theme_localize_script', array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		) )
+	);
+
+	// Theme fonts
+	if ( ! empty( $theme_fonts ) ) {
+		foreach ( $theme_fonts as $ID => $link ) {
+			wp_register_style(
+				'pds-theme' . "-font-$ID",
+				$link
+			);
+		}
+	}
+} );
+
+/**
+ * Enqueue theme files.
+ *
+ * @since 1.0.0
+ */
+add_action( 'wp_enqueue_scripts', function () {
+
+	global $theme_fonts;
+
+	// Theme styles
+	wp_enqueue_style( 'pds-theme' );
+	
+	if ( get_post_type() == 'event' ) {
+
+		// Theme script
+		wp_enqueue_script( 'pds-theme' );
+		
+	}
+
+	// Theme fonts
+	if ( ! empty( $theme_fonts ) ) {
+		foreach ( $theme_fonts as $ID => $link ) {
+			wp_enqueue_style( 'pds-theme' . "-font-$ID" );
+		}
+	}
+	
+}, 11 );
