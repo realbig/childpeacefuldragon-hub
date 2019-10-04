@@ -2,7 +2,7 @@
 /**
  * Show all our fields under My Account, Checkout, Registration, etc.
  *
- * @since		{{VERSION}}
+ * @since		1.0.4
  *
  * @package PDS
  * @subpackage PDS/woocommerce
@@ -15,7 +15,7 @@ final class PDS_WooCommerce_Fields {
 	/**
 	 * PDS_WooCommerce_Fields constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.4
 	 */
     function __construct() {
 		
@@ -37,7 +37,7 @@ final class PDS_WooCommerce_Fields {
 	 * Add our fields to the My Account Page
 	 * 
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		void
 	 */
 	public function add_to_my_account() {
@@ -83,7 +83,7 @@ final class PDS_WooCommerce_Fields {
 	 * Add Fields to the Registration Page
 	 * 
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		void
 	 */
 	public function add_to_registration() {
@@ -131,7 +131,7 @@ final class PDS_WooCommerce_Fields {
 	 * @param		array $checkout_fields Checkout Fields
 	 *                                         
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		array Checkout Fields
 	 */
 	public function add_to_checkout( $checkout_fields ) {
@@ -179,7 +179,7 @@ final class PDS_WooCommerce_Fields {
 	 * @param		integer $user_id User ID
 	 *                               
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		void
 	 */
 	public function save_data( $user_id ) {
@@ -218,7 +218,7 @@ final class PDS_WooCommerce_Fields {
 	 * @param		array   $posted_data $_POST
 	 *                              
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		void
 	 */
 	public function save_order_meta( $order_id, $posted_data ) {
@@ -259,7 +259,7 @@ final class PDS_WooCommerce_Fields {
 	 * @param 		array $data Data to be Posted
 	 *                                 
 	 * @access		public
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		array Data to be Posted
 	 */
 	public function add_to_posted_data( $data ) {
@@ -284,7 +284,7 @@ final class PDS_WooCommerce_Fields {
 	 * Get the fields that we're adding to WooCommerce views
 	 * 
 	 * @access		private
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		array WooCommerce Fields
 	 */
 	private function get_fields() {
@@ -314,7 +314,7 @@ final class PDS_WooCommerce_Fields {
 	 * @param		array   $field_args Field Args
 	 *                                   
 	 * @access		private
-	 * @since		{{VERSION}}
+	 * @since		1.0.4
 	 * @return		boolean Show/Hide
 	 */
 	private function is_field_visible( $field_args ) {
