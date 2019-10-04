@@ -226,3 +226,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 	
 }, 11 );
+
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once __DIR__ . '/includes/woocommerce/add-user-meta.php';
+}
