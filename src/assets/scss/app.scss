@@ -1,0 +1,46 @@
+@import 'foundation';
+
+$dark-color: #000;
+$light-color: #fff;
+
+$primary-color: #222833;
+$secondary-color: #f36457;
+
+$foundation-palette: (
+    primary: $primary-color,
+    secondary: $secondary-color,
+);
+
+@include add-foundation-colors;
+
+$button-palette: $foundation-palette;
+
+$button-background: $primary-color;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+
+$button-radius: rem-calc(20);
+
+$global-width: 1216px;
+$grid-row-width: $global-width;
+$hr-width: $global-width;
+$reveal-max-width: $global-width;
+$grid-container: $global-width;
+$grid-container-max: $global-width;
+
+@include foundation-button;
+@include foundation-visibility-classes;
+
+@import 'mixins';
+
+@import 'global/alert';
+@import 'global/button';
+@import 'global/background-color';
+
+@import './style';
+
+// These styles are applied to a <meta> tag, which is read by the Foundation JavaScript
+// This is the only part of the foundation-global-styles mixin we need
+// If we include all of the Global Styles, it adjusts sizing elsewhere too and we don't want that
+.foundation-mq {
+	font-family: '#{-zf-bp-serialize($breakpoints)}';
+}

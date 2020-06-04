@@ -163,11 +163,16 @@ add_action( 'init', function () {
 
 	global $theme_fonts;
 
+	wp_register_style(
+		'parent-theme',
+		trailingslashit( get_template_directory_uri() ) . 'style.css'
+	);
+
 	// Theme styles
 	wp_register_style(
 		'pds-theme',
-		THEME_URL . '/app.css',
-		null,
+		trailingslashit( THEME_URL ) . 'dist/assets/css/app.css',
+		array( 'parent-theme' ),
 		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VER
 	);
 
@@ -230,3 +235,11 @@ add_action( 'wp_enqueue_scripts', function () {
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once __DIR__ . '/includes/woocommerce/add-user-meta.php';
 }
+
+add_action( 'woo_header_before', function() {
+
+	if ( function_exists( 'pds_show_inset_alerts' ) ) {
+		pds_show_inset_alerts();
+	}
+
+} );
