@@ -29,7 +29,8 @@ $total-columns: 12;
                 @include xy-grid-container;
                 
                 .pds-alert-content {
-                    overflow: auto;
+					overflow: auto;
+					padding-top: 2.5rem;
                 }
 
                 .pds-alert-text-container {
