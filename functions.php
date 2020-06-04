@@ -229,6 +229,14 @@ add_action( 'wp_enqueue_scripts', function () {
 			wp_enqueue_style( 'pds-theme' . "-font-$ID" );
 		}
 	}
+
+	wp_enqueue_script(
+		'fontawesome',
+		'//use.fontawesome.com/releases/v5.0.3/js/all.js',
+		array(),
+		'5.0.3',
+		false
+	);
 	
 }, 11 );
 
