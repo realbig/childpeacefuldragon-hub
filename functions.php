@@ -251,3 +251,81 @@ add_action( 'woo_header_before', function() {
 	}
 
 } );
+
+/**
+ * Add main GTM script
+ * 
+ * @since	{{VERSION}}
+ * @return	void
+ */
+add_action( 'wp_head', function() {
+
+	?>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NRMZKJZ');</script>
+	<!-- End Google Tag Manager -->
+
+	<?php
+
+} );
+
+/**
+ * Creates an Object Buffer for us to forcibly inject our Google Tag Manager Code inside of later
+ * 
+ * @param		string Template File
+ * 
+ * @since		{{VERSION}}
+ * @return		string Template File
+ */
+add_filter( 'template_include', function( $template ) {
+	
+	ob_start();
+	
+	return $template;
+	
+}, 99 );
+
+/**
+ * Forcibly injects Google Tag Manager code after the opening <body> tag without needing to edit header.php in the Parent Theme
+ * 
+ * @since		{{VERSION}}
+ * @return		string HTML Content
+ */
+add_filter( 'shutdown', function() {
+
+	$content = ob_get_clean();
+	
+	ob_start();
+
+	wp_body_open();
+
+	$hook = ob_get_clean();
+
+	$content = preg_replace( '#<body([^>]*)>#i', "<body$1>{$hook}", $content );
+
+	echo $content;
+	
+}, 0 );
+
+/**
+ * Add GTM <noscript> tag
+ * 
+ * @since	{{VERSION}}
+ * @return	void
+ */
+add_action( 'wp_body_open', function() {
+
+	?>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRMZKJZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<?php
+
+} );
