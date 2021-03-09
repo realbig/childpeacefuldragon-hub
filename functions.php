@@ -255,7 +255,7 @@ add_action( 'woo_header_before', function() {
 /**
  * Add main GTM script
  * 
- * @since	{{VERSION}}
+ * @since	1.0.8
  * @return	void
  */
 add_action( 'wp_head', function() {
@@ -279,7 +279,7 @@ add_action( 'wp_head', function() {
  * 
  * @param		string Template File
  * 
- * @since		{{VERSION}}
+ * @since		1.0.8
  * @return		string Template File
  */
 add_filter( 'template_include', function( $template ) {
@@ -293,7 +293,7 @@ add_filter( 'template_include', function( $template ) {
 /**
  * Forcibly injects Google Tag Manager code after the opening <body> tag without needing to edit header.php in the Parent Theme
  * 
- * @since		{{VERSION}}
+ * @since		1.0.8
  * @return		string HTML Content
  */
 add_filter( 'shutdown', function() {
@@ -315,7 +315,7 @@ add_filter( 'shutdown', function() {
 /**
  * Add GTM <noscript> tag
  * 
- * @since	{{VERSION}}
+ * @since	1.0.8
  * @return	void
  */
 add_action( 'wp_body_open', function() {
