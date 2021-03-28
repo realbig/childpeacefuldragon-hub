@@ -332,7 +332,7 @@ add_action( 'wp_body_open', function() {
 
 /**
  * Defers parsing of JS
- * @since {{VERSION}}
+ * @since 1.0.9
  */
 
 add_filter( 'script_loader_tag', 'pds_defer_js', 10, 3 );
