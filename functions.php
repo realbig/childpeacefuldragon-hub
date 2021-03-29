@@ -338,12 +338,9 @@ add_action( 'wp_body_open', function() {
 add_filter( 'script_loader_tag', 'pds_defer_js', 10, 3 );
 
 function pds_defer_js( $tag, $handle, $src ) {
-
+	if ( is_admin() ) return $tag;
 	if ( strpos( $handle, 'jquery' ) === false ) {
-
 		$tag = str_replace( 'src', 'defer="defer" src', $tag );
-
 	}
-
     return $tag;
 }
