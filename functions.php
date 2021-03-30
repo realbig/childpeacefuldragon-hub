@@ -341,7 +341,6 @@ function pds_defer_js( $tag, $handle, $src ) {
 	
 	if ( is_admin() ) return $tag;
 	if ( strpos( $handle, '/jquery/' ) === false ) {
-		echo $handle;
 		$tag = str_replace( 'src', 'defer="defer" src', $tag );
 	}
 
