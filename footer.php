@@ -64,7 +64,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		        <?php if( isset( $woo_options['woo_footer_bottom'] ) && $woo_options['woo_footer_bottom'] == 'true' ) {
 		        	echo wpautop( stripslashes( $woo_options['woo_footer_bottom_text'] ) );
 				} else { ?>
-					<p><?php rbw_credit(); ?></p>
+					<?php if ( function_exists( 'rbw_credit' ) ) : ?>
+						<p><?php rbw_credit(); ?></p>
+					<?php endif; ?>
 				<?php } ?>
 				</div>
 
