@@ -1,6 +1,6 @@
 {
 	"name": "peacefuldragon_theme",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"dependencies": {
 		"foundation-sites": "^6.6.3"
 	},
