@@ -360,7 +360,7 @@ function pds_defer_js( $tag, $handle, $src ) {
  * @param   boolean  $bool       Enabled/Disabled
  * @param   string   $post_type  Post Type
  *
- * @since	{{VERSION}}
+ * @since	1.0.13
  * @return  boolean              Enabled/Disabled
  */
 add_filter( 'use_block_editor_for_post_type', function( $bool, $post_type ) {
