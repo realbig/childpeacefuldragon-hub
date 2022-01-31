@@ -351,3 +351,20 @@ function pds_defer_js( $tag, $handle, $src ) {
     return $tag;
 	
 }
+
+/**
+ * Force enable Gutenberg for this site
+ * This Multisite has Classic Editor network-activated and I don't want to have to go through and manually activate it for every other site
+ * Note: Some CPTs don't have the necessary settings enabled for Gutenberg to show. Example: Testimonials and Slides
+ * 
+ * @param   boolean  $bool       Enabled/Disabled
+ * @param   string   $post_type  Post Type
+ *
+ * @since	{{VERSION}}
+ * @return  boolean              Enabled/Disabled
+ */
+add_filter( 'use_block_editor_for_post_type', function( $bool, $post_type ) {
+
+    return true;
+
+}, 999, 2 );
