@@ -284,6 +284,8 @@ add_action( 'wp_head', function() {
  */
 add_filter( 'template_include', function( $template ) {
 	
+	if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) return $template;
+	
 	ob_start();
 	
 	return $template;
@@ -296,7 +298,9 @@ add_filter( 'template_include', function( $template ) {
  * @since		1.0.8
  * @return		string HTML Content
  */
-add_filter( 'shutdown', function() {
+add_action( 'shutdown', function() {
+	
+	if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) return;
 
 	$content = ob_get_clean();
 	
