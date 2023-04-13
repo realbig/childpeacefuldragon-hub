@@ -380,7 +380,7 @@ if ( ! function_exists( 'woothemes_get_testimonials' ) ) {
 	 * 
 	 * @param  string/array $args  Arguments.
 	 * 
-	 * @since  {{VERSION}}
+	 * @since  1.1.0
 	 * @return array/boolean       Array if true, boolean if false
 	 */
 	function woothemes_get_testimonials( $args = '' ) {
@@ -489,7 +489,7 @@ if ( ! function_exists( 'woothemes_testimonials' ) ) {
 	 * Reimplements woothemes_testimonials() from the WooThemes Testimonials plugin
 	 * 
 	 * @param  string/array $args  Arguments.
-	 * @since  {{VERSION}}
+	 * @since  1.1.0
 	 * @return void
 	 */
 	function woothemes_testimonials( $args = '' ) {
@@ -658,7 +658,7 @@ if ( ! function_exists( 'woothemes_testimonials' ) ) {
  * @param  int 				$id   Post ID.
  * @param  string/array/int $size Image dimension.
  * 
- * @since  {{VERSION}}
+ * @since  1.1.0
  * @return string       	<img> tag
  */
 function pds_get_woothemes_testimonial_image( $id, $size ) {
@@ -687,7 +687,7 @@ function pds_get_woothemes_testimonial_image( $id, $size ) {
 /**
  * Reimplements Woothemes_Testimonials::get_custom_fields_settings()
  * 
- * @since  {{VERSION}}
+ * @since  1.1.0
  * @return array
  */
 function pds_get_woothemes_get_custom_fields_settings() {
